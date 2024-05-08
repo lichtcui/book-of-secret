@@ -18,7 +18,7 @@ impl Secret {
     pub fn new() -> Self {
         Self {
             api_version: String::from("v1"),
-            kind: String::from("ssh"),
+            kind: String::from(""),
             name: String::from(""),
             annotations: String::from(""),
             credentials: vec![],
@@ -26,7 +26,7 @@ impl Secret {
     }
 
     pub fn set_info(&mut self) {
-        self.kind = Question::new("chose secret kind").ask_with_options(vec!["ssh", "website"]);
+        self.kind = Question::new("kind").ask();
         self.annotations = Question::new("annotations").ask();
     }
 
