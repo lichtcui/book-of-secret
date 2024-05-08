@@ -1,0 +1,3 @@
+# start app
+
+cargo run
